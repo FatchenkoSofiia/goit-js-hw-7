@@ -4,10 +4,11 @@ const refs = {
 };
 
 refs.nameInput.addEventListener("input", onInputChange);
-refs.nameOutput.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
-  refs.nameOutput.textContent = event.currentTarget.value
-    ? event.currentTarget.value
+  const inputValue = event.currentTarget.value.trim(); // Видаляємо пробіли з обох кінців введення
+
+  refs.nameOutput.textContent = inputValue
+    ? inputValue
     : "Anonymous";
 }
